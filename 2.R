@@ -17,3 +17,13 @@ data_pipeline = function (file.path) {
 
 data1_clean <- data_pipeline("data2_1.csv")
 head(data1_clean)
+
+#合併資料(3)
+#這是那些測站在早上7點的時候所測得的汙染物濃度
+#我們來利用剛剛的自訂函數直接處理
+data2_clean <- data_pipeline("data2_2.csv")
+head(data2_clean)
+
+
+
+
