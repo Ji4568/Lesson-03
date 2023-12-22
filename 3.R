@@ -26,3 +26,22 @@ head(new.dat)
 
 #4.迴圈函數「for」
 
+#初級資料轉換(3)
+#在最開始的時候，我們要先對這份資料表做初步分析。這份資料表有幾個人？有幾種可能的疾病？
+#我們很明顯是需要用到函數「levels()」以及函數「length()」的組合
+#而函數「levels()」僅能用在因子向量上，所以我們要先確認ID及Disease的屬性
+class(dat[,1])
+class(dat[,2])
+#很幸運的，在檔案讀進來的時候兩者就都已經是因子向量了，如果不是的話，記得要使用函數「as.factor()」進行轉換
+dat[,1] = as.factor(dat[,1])
+dat[,2] = as.factor(dat[,2])
+#接著，我們就能用函數「levels()」取得檔案中所有曾經出現過的人，以及所有曾經出現過的疾病
+levels.sample = levels(dat[,1])
+levels.sample
+n.sample = length(levels.sample)
+n.sample
+levels.disease = levels(dat[,2])
+levels.disease
+n.disease = length(levels.disease)
+n.disease
+
