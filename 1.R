@@ -52,3 +52,26 @@ Fibonacci = function (a, b, last.seq) {
 Fibonacci(1, 1, 20)
 
 Fibonacci(-3, 2, 20)
+
+#自訂函數(4)
+#顯然，在剛剛的函數中，當 last.seq < 3 時會產生錯誤
+Fibonacci(2, 4, 2)
+#所以，我們需要在函數中加入確認length大小而避免錯誤
+#不要忘記函數「cat()」能與使用者溝通
+
+Fibonacci = function (a, b, last.seq) {
+  if (last.seq < 3) {
+    cat("last.seq必須大於等於3。")
+  } else {
+    x = c(a, b)
+    
+    for (i in 3:last.seq) {
+      x[i] = x[i-1] + x[i-2]
+    }
+    
+    x
+  }
+}
+#現在當last.seq < 3時就會提出警告
+Fibonacci(2, 4, 2)
+
