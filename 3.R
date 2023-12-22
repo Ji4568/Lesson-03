@@ -45,3 +45,10 @@ levels.disease
 n.disease = length(levels.disease)
 n.disease
 
+#初級資料轉換(4)
+#我們發現共有24個人，總共有4種疾病，因此我們想要創造一個24*5的矩陣，其中第一欄放ID，其他欄位分別描述4種疾病的狀態
+#這裡我們會用到函數「matrix」做一個空的矩陣，在最開始的時候我們可以先在矩陣內都填上0(填什麼並不重要，因為等等都會覆蓋掉)
+new.dat = matrix(0, nrow = n.sample, ncol = n.disease+1)
+colnames(new.dat) = c("ID", levels.disease)
+new.dat[,1] = levels.sample
+new.dat
