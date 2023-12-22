@@ -24,6 +24,13 @@ head(data1_clean)
 data2_clean <- data_pipeline("data2_2.csv")
 head(data2_clean)
 
+#合併資料(4)
+#現在，我們希望將早上7點的值與早上5點半的值做合併，此時需要一個新函數「merge()」，此函數能幫助我們把兩個檔案依據索引變數做擴增
+#下面是從路徑到合併檔案的全過程
+data1_clean <- data_pipeline("data2_1.csv")
+data2_clean <- data_pipeline("data2_2.csv")
+merge.dat = merge(data1_clean, data2_clean, by = "school", all = TRUE)
+head(merge.dat)
 
 
 
