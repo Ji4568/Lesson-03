@@ -10,4 +10,30 @@ add_score(36)
 
 add_score(58)
 
+#自訂函數(2)
+#複習一下我們第二節課教到費波納奇數列，他的做法如下：
+x = c(1, 1)
+
+for (i in 3:20) {
+  x[i] = x[i-1] + x[i-2]
+}
+
+x
+
+#仔細觀察一下我們的程式，其中20是個可變的數字，我們將其拉到最外面
+last.seq = 20
+#這樣是不是就可以整合成一個函數了?
+  Fibonacci = function (last.seq) {
+    x = c(1, 1)
+    
+    for (i in 3:last.seq) {
+      x[i] = x[i-1] + x[i-2]
+    }
+    
+    x
+  }
+
+Fibonacci(10)
+
+Fibonacci(20)
 
