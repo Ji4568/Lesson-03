@@ -52,3 +52,17 @@ new.dat = matrix(0, nrow = n.sample, ncol = n.disease+1)
 colnames(new.dat) = c("ID", levels.disease)
 new.dat[,1] = levels.sample
 new.dat
+
+#初級資料轉換(5)
+#接著，如果我們想要了解第一個人有哪些疾病，我們需要在原始檔中使用索引函數找到與他有關的資料
+i = 1
+dat[dat[,1]==levels.sample[i],]
+#但是我們可能只對其中疾病的部分有興趣而已，所以我們在逗點的右邊也要加上數字
+dat[dat[,1]==levels.sample[i],2]
+#這個人所有疾病通通都有，真是不走運，這時候我們又要用到函數「%in%」，它的功能是確認左邊的物件是否有在右邊的物件中出現過
+levels.disease %in% dat[dat[,1]==levels.sample[i],2]
+#接著，我們要把這4個值填入矩陣的第1列，但第一欄除外(因為第一欄是ID)，我們可以使用負數代表除去不想要的欄位
+new.dat[i,-1] = levels.disease %in% dat[dat[,1]==levels.sample[i],2]
+new.dat
+
+
