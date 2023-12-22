@@ -42,4 +42,17 @@ data2.simple = data2_clean[,c("s_d0", "school")]
 simple.merge.dat = merge(data1.simple, data2.simple, by = "school", all = TRUE)
 head(simple.merge.dat)
 
+#合併資料(6)
+#接著我們再點[這裡]選下載下一個檔案「data2_3.csv」，這個檔案是早上8點時的各測站回傳資訊，之後我們可以做完全一樣的動作，並將她與simple.merge.dat再合併
+#注意，當等號的左右邊同時出現simple.merge.dat時，舊的simple.merge.dat將會在運算後永遠消失，而新的simple.merge.dat將會取代他
+data_clean <- data_pipeline("data2_3.csv")
+data.simple = data_clean[,c("s_d0", "school")]
+simple.merge.dat = merge(simple.merge.dat, data.simple, by = "school", all = TRUE)
+head(simple.merge.dat)
+
+#同樣的步驟再來，請在再點[這裡]下載最後一個檔案「data2_4.csv」
+data_clean <- data_pipeline("data2_4.csv")
+data.simple = data_clean[,c("s_d0", "school")]
+simple.merge.dat = merge(simple.merge.dat, data.simple, by = "school", all = TRUE)
+head(simple.merge.dat)
 
