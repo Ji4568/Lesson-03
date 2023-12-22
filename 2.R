@@ -32,5 +32,14 @@ data2_clean <- data_pipeline("data2_2.csv")
 merge.dat = merge(data1_clean, data2_clean, by = "school", all = TRUE)
 head(merge.dat)
 
+#合併資料(5)
+#假設我們有興趣的變數其實只有s_d0(這是PM2.5的濃度)，而剩下的我們假定我們並不感興趣，我們其實可以在檔案合併前，利用索引函數將dat1.clean及dat2.clean兩個檔案變成一個比較乾淨的檔案，然後再進行合併
+#下面是從路徑到合併檔案的全過程
+data1_clean <- data_pipeline("data2_1.csv")
+data2_clean <- data_pipeline("data2_2.csv")
+data1.simple = data1_clean[,c("s_d0", "school")]
+data2.simple = data2_clean[,c("s_d0", "school")]
+simple.merge.dat = merge(data1.simple, data2.simple, by = "school", all = TRUE)
+head(simple.merge.dat)
 
 
