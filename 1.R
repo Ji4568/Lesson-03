@@ -37,3 +37,18 @@ Fibonacci(10)
 
 Fibonacci(20)
 
+#璹ㄧ计(3)
+#安﹚и辨耎甶禣猧计琵ㄏノ﹚癬﹍璹ㄧ计す砛硂妓
+Fibonacci = function (a, b, last.seq) {
+  x = c(a, b)
+  
+  for (i in 3:last.seq) {
+    x[i] = x[i-1] + x[i-2]
+  }
+  
+  x
+}
+
+Fibonacci(1, 1, 20)
+
+Fibonacci(-3, 2, 20)
